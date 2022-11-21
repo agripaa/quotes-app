@@ -1,0 +1,26 @@
+GET http://localhost:5000/quote
+
+###
+GET http://localhost:5000/quote/1
+
+###
+POST http://localhost:5000/quote
+Content-Type: application/json
+
+{
+    "quote": "kamu jamal aku jimil",
+    "user": "jamal"
+}
+
+###
+PATCH  http://localhost:5000/quote/2
+Content-Type: application/json
+
+{
+    "quote": "kamu jimil aku jamal",
+    "user": "jamal"
+}
+
+
+###
+DELETE  http://localhost:5000/quote/2
