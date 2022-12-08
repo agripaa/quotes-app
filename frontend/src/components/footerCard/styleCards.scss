@@ -1,0 +1,33 @@
+.quote {
+  font-family: "EB Garamond";
+  background-color: transparent;
+  color: #3f3f5a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.cardFooter {
+  font-weight: 100;
+  font-size: 1em;
+  line-height: 1.4;
+  position: relative;
+  margin: 0;
+  text-align: center;
+}
+
+
+
+.author {
+  line-height: 3;
+  text-align: left;
+}
+.quote::before,
+.quote::after {
+  content: "";
+}
+.pCardFooter {
+  width: 100%;
+}
