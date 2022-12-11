@@ -8,7 +8,17 @@
   border-radius: 0;
   border-bottom: 0.5px solid rgb(153, 153, 153, 0.5);
 }
-
+.img-empty {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.img-empty > img {
+  width: 96px;
+  height: 96px;
+}
 blockquote {
   margin: 0;
   padding: 0;

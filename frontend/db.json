@@ -1,34 +1,19 @@
 {
   "posts": [
     {
-      "id": 1669815626786,
-      "user": "sys",
-      "body": "asxzczxcas"
+      "id": 1670742380358,
+      "user": "syahroni",
+      "quote": "xxxxx"
     },
     {
-      "id": 1669815633863,
+      "id": 1670744441538,
+      "user": "syahroni",
+      "quote": "selamat datang"
+    },
+    {
+      "id": 1670744952895,
       "user": "roni",
-      "body": "zxzxzx"
-    },
-    {
-      "id": 1669816149070,
-      "user": "asads",
-      "body": "aaaaa"
-    },
-    {
-      "id": 1670040019092,
-      "user": "syahroni",
-      "body": "tdshgj"
-    },
-    {
-      "id": 1670249878942,
-      "user": "syahroni",
-      "body": "aku tak seperti apa yang kau lihat pada waktu aku kecil \n"
-    },
-    {
-      "id": 1670250960823,
-      "user": "syahroni",
-      "body": "jangan anggap aku remeh sedangkan engkau hanya bisa mengomentari bukan melihat jerih payahnya"
+      "quote": "ssdasd"
     }
   ],
   "comments": [],
