@@ -25,12 +25,13 @@ function WithHeaderAndQuoteExample() {
     }
     setLoading(false);
     setdata(res.data.result);
+    console.log(res.data.result)
   }
 
   async function deleteQuote(id) {
     try {
-      await axios.delete(`http://localhost:5000/qoute/${id}`);
-      await getApi();
+      await axios.delete(`http://localhost:5000/quote/${id}`);
+      getApi();
     } catch (e) {
       console.error(e);
     }
@@ -73,7 +74,7 @@ function WithHeaderAndQuoteExample() {
                             <button
                               type="button"
                               className="delete"
-                              onClick={deleteQuote.bind(post.id)}
+                              onClick={() => deleteQuote(post.id)}
                             >
                               <img src={closeLogo} alt="" width={15} />
                             </button>
@@ -102,7 +103,7 @@ function WithHeaderAndQuoteExample() {
                             <button
                               type="button"
                               className="delete"
-                              onClick={deleteQuote.bind(this, post.id)}
+                              onClick={() => deleteQuote(post.id)}
                             >
                               <img src={closeLogo} alt="" width={15} />
                             </button>
