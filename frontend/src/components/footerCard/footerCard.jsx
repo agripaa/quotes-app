@@ -31,7 +31,7 @@ function Slider(props) {
   }
   useEffect(() => {
     getApi();
-  }, [props.newData]);
+  }, []);
   useEffect(() => {
     document.documentElement.style.setProperty(
       "--swiper-theme-color",

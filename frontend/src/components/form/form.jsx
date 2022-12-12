@@ -12,14 +12,11 @@ import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import axios from "axios";
-import NewQuotes from "../Cards/NewQuotes/userCardsNew";
-import WithHeaderAndQuoteExample from "../Cards/userCard";
-import Slider from "../footerCard/footerCard";
+
 function FormAndQuotes() {
   const [user, setUser] = useState({});
   const [nama, setNama] = useState("");
   const [text, setText] = useState("");
-  const [Data, setData] = useState([]);
 
   const [width, setWidth] = useState(window.innerWidth);
   function handleWidth() {
@@ -42,13 +39,10 @@ function FormAndQuotes() {
     setNama("");
     setText("");
   }
-  async function getNewData() {
-    let res = await axios.get("http://localhost:5000/quote");
-    setData(res.data.result);
-  }
+
   async function getPostUser() {
+    await window.location.reload();
     let response = await axios.post("http://localhost:5000/quote", user);
-    await getNewData();
     return response;
   }
   useEffect(() => {
@@ -144,29 +138,6 @@ function FormAndQuotes() {
               </Col>
             </>
           )}
-        </Row>
-      </Container>
-      <Container fluid>
-        <h2 className="mt-4 new">New Quote's</h2>
-        <hr />
-        <Row className="mt-4">
-          <Col>
-            <NewQuotes />
-          </Col>
-        </Row>
-        <hr />
-      </Container>
-      <Container fluid>
-        <Row className="mt-4">
-          <WithHeaderAndQuoteExample newData={Data} />
-        </Row>
-      </Container>
-      <Container fluid>
-        <h2 className="mt-4 new">Carousel Quote's</h2>
-        <Row>
-          <Col>
-            <Slider newData={Data} />
-          </Col>
         </Row>
       </Container>
     </Fragment>

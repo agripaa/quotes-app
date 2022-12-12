@@ -14,21 +14,21 @@ function NewQuotes() {
   const [notFound, setNotFound] = useState(false);
   async function getApi() {
     let res = await axios.get("http://localhost:5000/quote");
+
     if (res.status >= 404) {
       setNotFound(true);
     } else if (res.status >= 200 && res.status <= 404) {
       setLoading(false);
     }
-    if (res.data.result.length > 1) {
-      let number = ~~(Math.random() * res.data.length);
-      return getQoutes(res.data.result[number].id);
-    } else {
-      return getQoutes(res.data.result[0].id);
+    if (res.data.result.length > 0) {
+      let number = ~~(Math.random() * res.data.result.length);
+      let respon = res.data.result[number].id;
+      await getQuotesById(respon);
     }
   }
-  async function getQoutes(number) {
+  async function getQuotesById(number) {
     let res = await axios.get(`http://localhost:5000/quote/${number}`);
-    console.log(res);
+
     return setNewQuote(res.data.data);
   }
   useEffect(() => {

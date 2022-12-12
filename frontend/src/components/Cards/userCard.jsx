@@ -10,7 +10,7 @@ import empty from "./img/empty2.png";
 import Col from "react-bootstrap/esm/Col";
 import { Link } from "react-router-dom";
 import Loaders from "../loaders/loader";
-function WithHeaderAndQuoteExample(props) {
+function WithHeaderAndQuoteExample() {
   const [data, setdata] = useState([]);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
@@ -25,19 +25,20 @@ function WithHeaderAndQuoteExample(props) {
     }
     setLoading(false);
     setdata(res.data.result);
-
-    console.log(res);
   }
 
-  async function deleteQuotes(id) {
-    let res = await axios.delete(`http://localhost:5000/qoute/${id}`);
-    await getApi();
-    return res;
+  async function deleteQuote(id) {
+    try {
+      await axios.delete(`http://localhost:5000/qoute/${id}`);
+      await getApi();
+    } catch (e) {
+      console.error(e);
+    }
   }
 
   useEffect(() => {
     getApi();
-  }, [props.newData]);
+  }, []);
   function handleWidth() {
     setWidth(window.innerWidth);
   }
@@ -72,7 +73,7 @@ function WithHeaderAndQuoteExample(props) {
                             <button
                               type="button"
                               className="delete"
-                              onClick={deleteQuotes.bind(this, post.id)}
+                              onClick={deleteQuote.bind(post.id)}
                             >
                               <img src={closeLogo} alt="" width={15} />
                             </button>
@@ -101,7 +102,7 @@ function WithHeaderAndQuoteExample(props) {
                             <button
                               type="button"
                               className="delete"
-                              onClick={deleteQuotes.bind(this, post.id)}
+                              onClick={deleteQuote.bind(this, post.id)}
                             >
                               <img src={closeLogo} alt="" width={15} />
                             </button>
