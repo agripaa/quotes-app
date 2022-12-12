@@ -2,40 +2,50 @@ import Card from "react-bootstrap/Card";
 import React, { Fragment } from "react";
 import "./userCards.scss";
 import axios from "axios";
+import empty from "../img/empty2.png";
+
 import Container from "react-bootstrap/esm/Container";
 import { useEffect } from "react";
 import { useState } from "react";
+import Loaders from "../../loaders/loader";
 function NewQuotes() {
   const [newQuotes, setNewQuote] = useState({});
   const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    let getId = 0;
-    let id = 0;
-    function hitData(e) {
-      axios.get(`http://localhost:5000/quote/${e}`).then((v) => {
-        if (v.status !== 200) {
-          setLoading(false);
-        } else {
-          setLoading(false);
-          setNewQuote(v.data.result);
-        }
-      });
+  const [notFound, setNotFound] = useState(false);
+  async function getApi() {
+    let res = await axios.get("http://localhost:5000/quote");
+
+    if (res.status >= 404) {
+      setNotFound(true);
+    } else if (res.status >= 200 && res.status <= 404) {
+      setLoading(false);
     }
+    if (res.data.result.length > 0) {
+      let number = ~~(Math.random() * res.data.result.length);
+      let respon = res.data.result[number].id;
+      await getQuotesById(respon);
+    }
+  }
+  async function getQuotesById(number) {
+    let res = await axios.get(`http://localhost:5000/quote/${number}`);
 
-    const getCount = async () => {
-      let res = await axios.get(`http://localhost:5000/quote`);
-      getId = ~~(Math.random() * res.data.length);
-      id = res.data[getId].id;
-
-      hitData(id);
-    };
-    getCount();
+    return setNewQuote(res.data.data);
+  }
+  useEffect(() => {
+    getApi();
   }, []);
-
+  if (notFound) {
+    return (
+      <div className="img-empty">
+        <img src={empty} alt="kosong" />
+        <p>lost Connection</p>
+      </div>
+    );
+  }
   return (
     <Fragment>
       {loading ? (
-        <i>loading data</i>
+        <Loaders />
       ) : (
         <Container key={newQuotes.id}>
           <Card className="mt-3 cardds">
