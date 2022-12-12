@@ -16,7 +16,7 @@ export const getQuotes = async(req, res) => {
 
 export const getQuotesById = async(req, res) => {
     try {
-        const result = await Quotes.findOne({id: req.params.id});
+        const result = await Quotes.findOne({where: {id: req.params.id}});
         res.status(200).json({
             response: 'OK',
             status: 200,

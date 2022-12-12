@@ -1,7 +1,7 @@
 GET http://localhost:5000/quote
 
 ###
-GET http://localhost:5000/quote/1
+GET http://localhost:5000/quote/3
 
 ###
 POST http://localhost:5000/quote
@@ -23,4 +23,4 @@ Content-Type: application/json
 
 
 ###
-DELETE  http://localhost:5000/quote/2
+DELETE  http://localhost:5000/quote/3
