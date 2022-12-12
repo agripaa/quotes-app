@@ -3,25 +3,41 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./showQoutes.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Loaders from "../loaders/loader";
+import empty from "../Cards/img/empty2.png";
 
 function ShowQuotes() {
   const [myQoutes, setMyqoutes] = useState({});
   const [loading, setLoading] = useState(true);
-  const params = useParams();
+  const [notFound, setNotFound] = useState(false);
 
-  useEffect(() => {
-    axios.get(`http://localhost:5000/quote/${params.id}`).then((v) => {
-      if (v.status !== 200) {
-        setLoading(true);
-      }
+  const params = useParams();
+  async function getQoutesById() {
+    let res = await axios.get(`http://localhost:5000/quote/${params.id}`);
+    if (res.status >= 404) {
+      setNotFound(true);
+    } else if (res.status >= 200 && res.status <= 404) {
       setLoading(false);
-      setMyqoutes(v.data.result);
-    });
+    }
+    setLoading(false);
+    console.log(res);
+    setMyqoutes(res.data.data);
+  }
+  useEffect(() => {
+    getQoutesById();
   }, [params]);
+  if (notFound) {
+    return (
+      <div className="img-empty">
+        <img src={empty} alt="kosong" />
+        <p>lost Connection</p>
+      </div>
+    );
+  }
   return (
     <Fragment>
       {loading ? (
-        <i>loading data</i>
+        <Loaders />
       ) : (
         <>
           <div className="blockquote-wrapper">
