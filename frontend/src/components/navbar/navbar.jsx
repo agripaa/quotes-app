@@ -1,17 +1,34 @@
-import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
-import React from "react";
-// import Nav from "react-bootstrap/Nav";
+import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 
-function ContainerInsideExample() {
+import "./navbar.css";
+function Navbar() {
   return (
-    <Navbar bg="tranparant">
-      <Container fluid>
-        <Navbar.Brand href="#">Qoutes App</Navbar.Brand>
-        {/* <Nav.Link>My Post</Nav.Link> */}
-      </Container>
-    </Navbar>
+    <Fragment>
+      <div className="containerNavbar">
+        <div className="hello">
+          <h2>Hello!</h2>
+        </div>
+        <div className="menu">
+          <Link to={"/"}>
+            <div className="home">
+              <h2>Home</h2>
+            </div>
+          </Link>
+          <Link to={"/create"}>
+            <div className="upload">
+              <h2>Upload</h2>
+            </div>
+          </Link>
+        </div>
+        <div className="copyright">
+          <p>Created by</p>
+          <p>Agripa Syahroni</p>
+          <p>Ase.Runa</p>
+        </div>
+      </div>
+    </Fragment>
   );
 }
 
-export default ContainerInsideExample;
+export default Navbar;
