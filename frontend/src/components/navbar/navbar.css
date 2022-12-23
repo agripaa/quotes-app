@@ -142,6 +142,14 @@
     transform: scale(0);
     transition: all 100ms;
   }
+  .home > h2:hover::before,
+  .upload > h2:hover::before {
+    transform: scale(1);
+  }
+  .home > h2::after,
+  .upload > h2::after {
+    display: none;
+  }
   .upload > h2 {
     font-size: 1.5em;
     letter-spacing: 0.02em;

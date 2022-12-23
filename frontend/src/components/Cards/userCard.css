@@ -3,7 +3,114 @@
   height: 100%;
   margin-left: 170px;
 }
+.judulLandingPage {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+.judulLandingPage > h2 {
+  font-weight: 200;
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: 0.02em;
+  color: #212121;
+}
+.quotesLandingPage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  column-gap: 80px;
+  row-gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.Quotes {
+  width: 360px;
+  height: 240px;
+  background: #eeeeee;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.navigateMenu {
+  width: 100%;
+  position: relative;
+  flex-basis: 15%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+}
+.menuQuotes {
+  width: 34px;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+}
+.menuQuotes:hover {
+  cursor: pointer;
+}
+.menuQuotes > span {
+  width: 8px;
+  height: 8px;
+  border-radius: 30px;
+  background-color: #32373d;
+  opacity: 0.8;
+}
+.textQuotes {
+  width: 100%;
+  flex-basis: 73%;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.textQuotes > q {
+  font-weight: 400;
+  font-size: 1em;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+.authorQuotes {
+  width: 100%;
+  flex-basis: 12%;
+  display: flex;
+  justify-content: flex-end;
+}
+.authorQuotes > p {
+  letter-spacing: 0.02em;
+  padding-right: 10px;
+  color: #212121;
+  margin: 0;
+  opacity: 0.8;
+}
+.helloLandingPage {
+  width: 100%;
+}
+.helloLandingPage > h2 {
+  font-size: 1.4em;
+  padding-left: 10px;
 
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  line-height: 34px;
+}
+.copyrightLandingPage {
+  position: fixed;
+  left: -115px;
+  bottom: 180px;
+}
+.copyrightLandingPage > p {
+  font-size: 0.89em;
+
+  color: #212121;
+  opacity: 0.6;
+  letter-spacing: 0.02em;
+  transform: rotate(-90deg);
+}
 @media screen and (max-width: 690px) {
   .containerLandingPage {
     margin-left: 135px;
@@ -13,5 +120,29 @@
   .containerLandingPage {
     margin: 0;
     width: 100%;
+    margin-bottom: 85px;
+  }
+  .judulLandingPage {
+    height: 80px;
+  }
+  .judulLandingPage > h2 {
+    font-size: 1.55em;
+  }
+}
+@media screen and (max-width: 500px) {
+  .Quotes {
+    width: 330px;
+    height: 230px;
+  }
+
+  .helloLandingPage {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .Quotes {
+    width: 315px;
+    height: 220px;
   }
 }

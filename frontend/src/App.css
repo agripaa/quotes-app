@@ -9,4 +9,5 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   height: auto;
+  overflow-x: hidden;
 }
