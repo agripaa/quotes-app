@@ -3,7 +3,8 @@ import "./from.css";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Fragment } from "react";
-
+import upload from "./img/upload.png";
+import anime1 from "./img/anime.png";
 import axios from "axios";
 import Navbar from "../navbar/navbar";
 
@@ -48,6 +49,35 @@ function FormAndQuotes() {
   return (
     <Fragment>
       <Navbar />
+      <div className="containerForm">
+        <div className="judulForm">
+          <h2>Making Quotes</h2>
+        </div>
+        <form className="inputForm">
+          <div className="textAreaForm">
+            <textarea name="" id="area"></textarea>
+            <h2>Type Something...</h2>
+          </div>
+          <div className="buttonForm">
+            <div className="inputNameForm">
+              <input type="text" className="textInputForm" placeholder="Name" />
+            </div>
+            <div className="buttonSubmitForm">
+              <button className="buttonsubmit">
+                <div className="imageForm">
+                  <img src={upload} alt="" />
+                </div>
+                <div className="uploadForm">
+                  <p>Upload</p>{" "}
+                </div>
+              </button>
+            </div>
+          </div>
+        </form>
+        <div className="animeImageForm">
+          <img src={anime1} alt="" />
+        </div>
+      </div>
     </Fragment>
   );
 }

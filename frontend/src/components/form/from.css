@@ -1,2 +1,114 @@
-
-
+.containerForm {
+  width: 80%;
+  height: 100%;
+  margin-left: 170px;
+}
+.judulForm {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+.judulForm > h2 {
+  font-weight: 200;
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: 0.02em;
+  color: #212121;
+}
+.inputForm {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  margin-top: 4.5%;
+}
+.textAreaForm {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+#area {
+  resize: none;
+  width: 800px;
+  height: 400px;
+  background: #eeeeee;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 20px;
+  padding-top: 8%;
+}
+.textAreaForm > h2 {
+  position: absolute;
+  top: 40%;
+  font-size: 1.8em;
+  opacity: 0.2;
+}
+.buttonForm {
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+}
+.textInputForm {
+  width: 361px;
+  height: 60px;
+  border: none;
+  outline: none;
+  background: #eeeeee;
+  border-radius: 10px;
+  padding: 10px;
+  padding-left: 14px;
+  font-size: 1.2em;
+}
+.buttonsubmit {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 6px;
+  width: 163px;
+  height: 60px;
+  border: none;
+  background: #7c69ff;
+  border-radius: 10px;
+  align-items: center;
+}
+.uploadForm > p {
+  font-size: 24px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  opacity: 0.8;
+  margin: 0;
+}
+.animeImageForm {
+  position: absolute;
+  top: 0;
+  right: -25.5%;
+}
+.animeImageForm > img {
+  height: 800px;
+  opacity: 0.6;
+}
+@media screen and (max-width: 690px) {
+  .containerForm {
+    margin-left: 135px;
+  }
+}
+@media screen and (max-width: 620px) {
+  .containerForm {
+    margin: 0;
+    width: 100%;
+    margin-bottom: 85px;
+  }
+  .judulForm {
+    height: 80px;
+  }
+  .judulForm > h2 {
+    font-size: 1.55em;
+  }
+}
