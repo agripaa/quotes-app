@@ -8,6 +8,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+body::-webkit-scrollbar {
+  width: 1px;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(252, 252, 252, 0.7);
+  outline: 1px solid rgb(184, 184, 184);
+}
 
 @font-face {
   font-family: "inte";

@@ -33,6 +33,7 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .navigateMenu {
   width: 100%;
@@ -111,6 +112,55 @@
   letter-spacing: 0.02em;
   transform: rotate(-90deg);
 }
+.addMenuQuotes {
+  position: absolute;
+  width: 110px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #eeeeee;
+  box-shadow: 0px 15px 20px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  left: auto;
+  row-gap: 5px;
+  right: -10px;
+  top: 25px;
+  padding: 10px;
+  transform: scale(0);
+  transition: all 0.2s;
+}
+.active {
+  transform: scale(1);
+}
+.editQuotes,
+.deleteQuotes,
+.viewQuotes {
+  width: 100%;
+  flex-basis: 15%;
+  display: flex;
+  justify-content: space-between;
+}
+.editQuotes:hover,
+.deleteQuotes:hover,
+.viewQuotes:hover {
+  cursor: pointer;
+}
+.texteditQuotes > p,
+.textdeleteQuotes > p,
+.textviewQuotes > p {
+  letter-spacing: 0.02em;
+  color: #212121;
+  opacity: 0.8;
+  margin: 0;
+}
+.imageEditQuotes > img,
+.imageDeleteQuotes > img,
+.imageViewQuotes > img {
+  opacity: 0.6;
+}
+
 @media screen and (max-width: 690px) {
   .containerLandingPage {
     margin-left: 135px;

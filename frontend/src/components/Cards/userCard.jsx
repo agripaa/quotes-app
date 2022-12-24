@@ -1,8 +1,10 @@
-import Card from "react-bootstrap/Card";
 import "./userCard.css";
 import React, { Fragment } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import Edit from "./img/edit.png";
+import Dlt from "./img/delete.png";
+import view from "./img/view.png";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Loaders from "../loaders/loader";
@@ -10,6 +12,7 @@ function HomePage() {
   const [data, setdata] = useState([]);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
+  const [show, setShow] = useState(true);
   const [width, setWidth] = useState(window.innerWidth);
 
   // async function getApi() {
@@ -31,7 +34,26 @@ function HomePage() {
   //     console.error(e);
   //   }
   // }
-
+  async function getShow() {
+    return setShow(!show);
+  }
+  async function addMenu(e) {
+    let menu = await e.currentTarget.parentElement.parentElement;
+    await getShow();
+    if (show) {
+      if (menu.children[3].className !== "addMenuQuotes active") {
+        menu.children[3].className = "addMenuQuotes active";
+      } else {
+        menu.children[3].className = "addMenuQuotes";
+      }
+    } else {
+      if (menu.children[3].className === "addMenuQuotes active") {
+        menu.children[3].className = "addMenuQuotes";
+      } else {
+        menu.children[3].className = "addMenuQuotes active";
+      }
+    }
+  }
   useEffect(() => {
     // getApi();
   }, []);
@@ -53,7 +75,7 @@ function HomePage() {
             <div className="quotesLandingPage">
               <div className="Quotes">
                 <div className="navigateMenu">
-                  <div className="menuQuotes">
+                  <div className="menuQuotes" onClick={addMenu.bind(this)}>
                     <span></span>
                     <span></span>
                     <span></span>
@@ -71,6 +93,32 @@ function HomePage() {
                 <div className="authorQuotes">
                   <p>John</p>
                 </div>
+                <div className={`addMenuQuotes`}>
+                  <div className="editQuotes">
+                    <div className="texteditQuotes">
+                      <p>Edit</p>
+                    </div>
+                    <div className="imageEditQuotes">
+                      <img src={Edit} alt="" />
+                    </div>
+                  </div>
+                  <div className="deleteQuotes">
+                    <div className="textdeleteQuotes">
+                      <p>Delete</p>
+                    </div>
+                    <div className="imageDeleteQuotes">
+                      <img src={Dlt} alt="" />
+                    </div>
+                  </div>
+                  <div className="viewQuotes">
+                    <div className="textviewQuotes">
+                      <p>View</p>
+                    </div>
+                    <div className="imageViewQuotes">
+                      <img src={view} alt="" />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </>
@@ -85,7 +133,7 @@ function HomePage() {
             <div className="quotesLandingPage">
               <div className="Quotes">
                 <div className="navigateMenu">
-                  <div className="menuQuotes">
+                  <div className="menuQuotes" onClick={addMenu.bind(this)}>
                     <span></span>
                     <span></span>
                     <span></span>
@@ -100,6 +148,32 @@ function HomePage() {
                 </div>
                 <div className="authorQuotes">
                   <p>John</p>
+                </div>
+                <div className={`addMenuQuotes`}>
+                  <div className="editQuotes">
+                    <div className="texteditQuotes">
+                      <p>Edit</p>
+                    </div>
+                    <div className="imageEditQuotes">
+                      <img src={Edit} alt="" />
+                    </div>
+                  </div>
+                  <div className="deleteQuotes">
+                    <div className="textdeleteQuotes">
+                      <p>Delete</p>
+                    </div>
+                    <div className="imageDeleteQuotes">
+                      <img src={Dlt} alt="" />
+                    </div>
+                  </div>
+                  <div className="viewQuotes">
+                    <div className="textviewQuotes">
+                      <p>View</p>
+                    </div>
+                    <div className="imageViewQuotes">
+                      <img src={view} alt="" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
