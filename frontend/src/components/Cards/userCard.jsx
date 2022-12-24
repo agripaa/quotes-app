@@ -37,6 +37,7 @@ function HomePage() {
   async function getShow() {
     return setShow(!show);
   }
+
   async function addMenu(e) {
     let menu = await e.currentTarget.parentElement.parentElement;
     await getShow();
