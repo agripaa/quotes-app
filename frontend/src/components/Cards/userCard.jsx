@@ -15,25 +15,25 @@ function HomePage() {
   const [show, setShow] = useState(true);
   const [width, setWidth] = useState(window.innerWidth);
 
-  // async function getApi() {
-  //   let res = await axios.get(`http://localhost:5000/quote`);
-  //   if (res.status >= 404) {
-  //     setNotFound(true);
-  //   } else if (res.status >= 200 && res.status <= 404) {
-  //     setLoading(false);
-  //   }
-  //   setLoading(false);
-  //   setdata(res.data.result);
-  // }
+  async function getApi() {
+    let res = await axios.get(`http://localhost:5000/quote`);
+    if (res.status >= 404) {
+      setNotFound(true);
+    } else if (res.status >= 200 && res.status <= 404) {
+      setLoading(false);
+    }
+    setLoading(false);
+    setdata(res.data.result);
+  }
 
-  // async function deleteQuote(id) {
-  //   try {
-  //     await axios.delete(`http://localhost:5000/qoute/${id}`);
-  //     await getApi();
-  //   } catch (e) {
-  //     console.error(e);
-  //   }
-  // }
+  async function deleteQuote(id) {
+    try {
+      await axios.delete(`http://localhost:5000/quote/${id}`);
+      await getApi();
+    } catch (e) {
+      console.error(e);
+    }
+  }
   async function getShow() {
     return setShow(!show);
   }
@@ -56,7 +56,7 @@ function HomePage() {
     }
   }
   useEffect(() => {
-    // getApi();
+    getApi();
   }, []);
   function handleWidth() {
     setWidth(window.innerWidth);
@@ -74,53 +74,54 @@ function HomePage() {
         {width > 620 ? (
           <>
             <div className="quotesLandingPage">
-              <div className="Quotes">
-                <div className="navigateMenu">
-                  <div className="menuQuotes" onClick={addMenu.bind(this)}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+              {data.map((res) => {
+                return (
+                  <div className="Quotes" key={res.id}>
+                    <div className="navigateMenu">
+                      <div className="menuQuotes" onClick={addMenu.bind(this)}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                    </div>
+                    <div className="textQuotes">
+                      <q>{res.quote}</q>
+                    </div>
+                    <div className="authorQuotes">
+                      <p>{res.user}</p>
+                    </div>
+                    <div className={`addMenuQuotes`}>
+                      <div className="editQuotes">
+                        <div className="texteditQuotes">
+                          <p>Edit</p>
+                        </div>
+                        <div className="imageEditQuotes">
+                          <img src={Edit} alt="" />
+                        </div>
+                      </div>
+                      <div
+                        className="deleteQuotes"
+                        onClick={deleteQuote.bind(this, res.id)}
+                      >
+                        <div className="textdeleteQuotes">
+                          <p>Delete</p>
+                        </div>
+                        <div className="imageDeleteQuotes">
+                          <img src={Dlt} alt="" />
+                        </div>
+                      </div>
+                      <div className="viewQuotes">
+                        <div className="textviewQuotes">
+                          <p>View</p>
+                        </div>
+                        <div className="imageViewQuotes">
+                          <img src={view} alt="" />
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="textQuotes">
-                  <q>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Obcaecati repellendus adipisci voluptates inventore
-                    exercitationem sit. Molestias vero doloribus, repellat,
-                    tempora cumque quas dolor iusto sit quia, velit quod sequi
-                    quibusdam?{" "}
-                  </q>
-                </div>
-                <div className="authorQuotes">
-                  <p>John</p>
-                </div>
-                <div className={`addMenuQuotes`}>
-                  <div className="editQuotes">
-                    <div className="texteditQuotes">
-                      <p>Edit</p>
-                    </div>
-                    <div className="imageEditQuotes">
-                      <img src={Edit} alt="" />
-                    </div>
-                  </div>
-                  <div className="deleteQuotes">
-                    <div className="textdeleteQuotes">
-                      <p>Delete</p>
-                    </div>
-                    <div className="imageDeleteQuotes">
-                      <img src={Dlt} alt="" />
-                    </div>
-                  </div>
-                  <div className="viewQuotes">
-                    <div className="textviewQuotes">
-                      <p>View</p>
-                    </div>
-                    <div className="imageViewQuotes">
-                      <img src={view} alt="" />
-                    </div>
-                  </div>
-                </div>
-              </div>
+                );
+              })}
             </div>
           </>
         ) : (
@@ -132,51 +133,54 @@ function HomePage() {
               <p>Created by : Agripa Syahroni Ase.Runa</p>
             </div>
             <div className="quotesLandingPage">
-              <div className="Quotes">
-                <div className="navigateMenu">
-                  <div className="menuQuotes" onClick={addMenu.bind(this)}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+              {data.map((res) => {
+                return (
+                  <div className="Quotes" key={res.id}>
+                    <div className="navigateMenu">
+                      <div className="menuQuotes" onClick={addMenu.bind(this)}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                    </div>
+                    <div className="textQuotes">
+                      <q>{res.quote}</q>
+                    </div>
+                    <div className="authorQuotes">
+                      <p>{res.user}</p>
+                    </div>
+                    <div className={`addMenuQuotes`}>
+                      <div className="editQuotes">
+                        <div className="texteditQuotes">
+                          <p>Edit</p>
+                        </div>
+                        <div className="imageEditQuotes">
+                          <img src={Edit} alt="" />
+                        </div>
+                      </div>
+                      <div
+                        className="deleteQuotes"
+                        onClick={() => deleteQuote(res.id)}
+                      >
+                        <div className="textdeleteQuotes">
+                          <p>Delete</p>
+                        </div>
+                        <div className="imageDeleteQuotes">
+                          <img src={Dlt} alt="" />
+                        </div>
+                      </div>
+                      <div className="viewQuotes">
+                        <div className="textviewQuotes">
+                          <p>View</p>
+                        </div>
+                        <div className="imageViewQuotes">
+                          <img src={view} alt="" />
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="textQuotes">
-                  <q>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Obcaecati repellendus adipisci voluptates inventore
-                    exercitationem sit. Molestias vero doloribus,{" "}
-                  </q>
-                </div>
-                <div className="authorQuotes">
-                  <p>John</p>
-                </div>
-                <div className={`addMenuQuotes`}>
-                  <div className="editQuotes">
-                    <div className="texteditQuotes">
-                      <p>Edit</p>
-                    </div>
-                    <div className="imageEditQuotes">
-                      <img src={Edit} alt="" />
-                    </div>
-                  </div>
-                  <div className="deleteQuotes">
-                    <div className="textdeleteQuotes">
-                      <p>Delete</p>
-                    </div>
-                    <div className="imageDeleteQuotes">
-                      <img src={Dlt} alt="" />
-                    </div>
-                  </div>
-                  <div className="viewQuotes">
-                    <div className="textviewQuotes">
-                      <p>View</p>
-                    </div>
-                    <div className="imageViewQuotes">
-                      <img src={view} alt="" />
-                    </div>
-                  </div>
-                </div>
-              </div>
+                );
+              })}
             </div>
           </>
         )}

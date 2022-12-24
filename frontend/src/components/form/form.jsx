@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { Fragment } from "react";
 import upload from "./img/upload.png";
 import anime1 from "./img/anime.png";
+import anime2 from "./img/animeNulis.png";
 import axios from "axios";
 import Navbar from "../navbar/navbar";
 
@@ -12,6 +13,7 @@ function FormAndQuotes() {
   const [user, setUser] = useState({});
   const [nama, setNama] = useState("");
   const [text, setText] = useState("");
+  const [typed, setTyped] = useState("");
 
   const [width, setWidth] = useState(window.innerWidth);
   function handleWidth() {
@@ -53,14 +55,36 @@ function FormAndQuotes() {
         <div className="judulForm">
           <h2>Making Quotes</h2>
         </div>
-        <form className="inputForm">
+        <form className="inputForm" onSubmit={addQuotes}>
           <div className="textAreaForm">
-            <textarea name="" id="area"></textarea>
-            <h2>Type Something...</h2>
+            <textarea
+              name=""
+              id="area"
+              value={text}
+              onChange={(e) => {
+                setText(e.target.value);
+                setTyped(e.target.value);
+              }}
+            ></textarea>
+            {typed !== "" ? (
+              <></>
+            ) : (
+              <>
+                <h2>Type Something...</h2>
+              </>
+            )}
           </div>
           <div className="buttonForm">
             <div className="inputNameForm">
-              <input type="text" className="textInputForm" placeholder="Name" />
+              <input
+                type="text"
+                className="textInputForm"
+                placeholder="Name"
+                value={nama}
+                onChange={(e) => {
+                  setNama(e.target.value);
+                }}
+              />
             </div>
             <div className="buttonSubmitForm">
               <button className="buttonsubmit">
@@ -74,9 +98,19 @@ function FormAndQuotes() {
             </div>
           </div>
         </form>
-        <div className="animeImageForm">
-          <img src={anime1} alt="" />
-        </div>
+        {width > 620 ? (
+          <>
+            <div className="animeImageForm">
+              <img src={anime1} alt="" />
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="animeImageForm2">
+              <img src={anime2} alt="" />
+            </div>
+          </>
+        )}
       </div>
     </Fragment>
   );

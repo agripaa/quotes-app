@@ -94,9 +94,198 @@
   height: 800px;
   opacity: 0.6;
 }
-@media screen and (max-width: 690px) {
+@media screen and (max-width: 1400px) {
   .containerForm {
-    margin-left: 135px;
+    margin-left: 150px;
+  }
+  .animeImageForm {
+    right: -30%;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .containerForm {
+    margin-left: 90px;
+  }
+  .animeImageForm {
+    right: -32%;
+  }
+}
+@media screen and (max-width: 1230px) {
+  .animeImageForm {
+    right: -35%;
+  }
+}
+@media screen and (max-width: 1175px) {
+  .animeImageForm {
+    right: -37%;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .containerForm {
+    margin-left: 60px;
+  }
+  #area {
+    width: 620px;
+    height: 380px;
+  }
+  .buttonForm {
+    width: 620px;
+  }
+  .animeImageForm {
+    transform: scale(0);
+  }
+}
+@media screen and (max-width: 1050px) {
+  #area {
+    width: 560px;
+    height: 360px;
+  }
+  .buttonForm {
+    width: 560px;
+  }
+  .textInputForm {
+    width: 331px;
+    height: 60px;
+  }
+  .buttonsubmit {
+    width: 150px;
+    height: 60px;
+  }
+}
+@media screen and (max-width: 920px) {
+  #area {
+    width: 480px;
+    height: 300px;
+  }
+  .buttonForm {
+    width: 480px;
+  }
+  .textInputForm {
+    width: 315px;
+    height: 55px;
+  }
+  .buttonsubmit {
+    width: 126px;
+    height: 55px;
+  }
+  .imageForm > img {
+    width: 20px;
+    height: 20px;
+  }
+  .uploadForm > p {
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    opacity: 0.8;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  #area {
+    width: 450px;
+    height: 280px;
+  }
+  .buttonForm {
+    width: 450px;
+  }
+  .textInputForm {
+    width: 305px;
+    height: 55px;
+  }
+  .buttonsubmit {
+    width: 126px;
+    height: 55px;
+  }
+}
+@media screen and (max-width: 810px) {
+  #area {
+    width: 420px;
+    height: 280px;
+  }
+  .buttonForm {
+    width: 420px;
+  }
+  .textInputForm {
+    width: 295px;
+    height: 50px;
+  }
+  .buttonsubmit {
+    width: 126px;
+    height: 50px;
+  }
+}
+@media screen and (max-width: 750px) {
+  #area {
+    width: 390px;
+    height: 270px;
+  }
+  .buttonForm {
+    width: 390px;
+  }
+  .textInputForm {
+    width: 240px;
+    height: 45px;
+  }
+  .buttonsubmit {
+    width: 106px;
+    height: 45px;
+  }
+  .imageForm > img {
+    width: 18px;
+    height: 18px;
+  }
+  .uploadForm > p {
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    opacity: 0.8;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 690px) {
+  #area {
+    width: 360px;
+    height: 270px;
+  }
+  .buttonForm {
+    width: 360px;
+  }
+  .textInputForm {
+    width: 235px;
+    height: 45px;
+  }
+  .buttonsubmit {
+    width: 106px;
+    height: 45px;
+  }
+}
+@media screen and (max-width: 660px) {
+  #area {
+    width: 320px;
+    height: 240px;
+  }
+  .buttonForm {
+    width: 320px;
+  }
+  .textInputForm {
+    width: 205px;
+    height: 40px;
+  }
+  .buttonsubmit {
+    width: 100px;
+    height: 40px;
+  }
+  .imageForm > img {
+    width: 16px;
+    height: 16px;
+  }
+  .uploadForm > p {
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    opacity: 0.8;
+    margin: 0;
   }
 }
 @media screen and (max-width: 620px) {
@@ -110,5 +299,109 @@
   }
   .judulForm > h2 {
     font-size: 1.55em;
+  }
+  #area {
+    width: 320px;
+    height: 240px;
+  }
+  .buttonForm {
+    width: 320px;
+  }
+  .textInputForm {
+    width: 205px;
+    height: 40px;
+  }
+  .buttonsubmit {
+    width: 100px;
+    height: 40px;
+  }
+  .animeImageForm2 {
+    position: absolute;
+    bottom: 3%;
+    left: -4.4%;
+  }
+  .animeImageForm2 > img {
+    width: 500px;
+    height: 300px;
+    opacity: 0.6;
+  }
+}
+@media screen and (max-width: 550px) {
+  #area {
+    width: 450px;
+    height: 305px;
+  }
+  .buttonForm {
+    width: 450px;
+  }
+  .textInputForm {
+    width: 225px;
+    height: 37px;
+  }
+  .buttonsubmit {
+    width: 125px;
+    height: 40px;
+  }
+}
+@media screen and (max-width: 500px) {
+  #area {
+    width: 430px;
+    height: 305px;
+  }
+  .buttonForm {
+    width: 430px;
+  }
+  .textInputForm {
+    width: 225px;
+    height: 37px;
+  }
+  .buttonsubmit {
+    width: 125px;
+    height: 40px;
+  }
+}
+@media screen and (max-width: 490px) {
+  #area {
+    width: 390px;
+    height: 280px;
+  }
+  .buttonForm {
+    width: 390px;
+  }
+  .textInputForm {
+    width: 205px;
+    height: 35px;
+  }
+  .buttonsubmit {
+    width: 115px;
+    height: 37px;
+  }
+  .imageForm > img {
+    width: 15px;
+    height: 15px;
+  }
+  .uploadForm > p {
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    opacity: 0.8;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 400px) {
+  #area {
+    width: 310px;
+    height: 210px;
+  }
+  .buttonForm {
+    width: 310px;
+  }
+  .textInputForm {
+    width: 190px;
+    height: 35px;
+  }
+  .buttonsubmit {
+    width: 105px;
+    height: 37px;
   }
 }
