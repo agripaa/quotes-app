@@ -24,12 +24,13 @@ function HomePage() {
     }
     setLoading(false);
     setdata(res.data.result);
+    console.log(res.data.result)
   }
 
   async function deleteQuote(id) {
     try {
       await axios.delete(`http://localhost:5000/quote/${id}`);
-      await getApi();
+      getApi();
     } catch (e) {
       console.error(e);
     }

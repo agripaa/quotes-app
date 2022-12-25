@@ -14,19 +14,19 @@ export const getQuotes = async (req, res) => {
   }
 };
 
-export const getQuotesById = async (req, res) => {
-  try {
-    const result = await Quotes.findOne({ where: { id: req.params.id } });
-    res.status(200).json({
-      response: "OK",
-      status: 200,
-      data: result,
-    });
-  } catch (err) {
-    console.log(err);
-    res.json({ errors: err });
-  }
-};
+export const getQuotesById = async(req, res) => {
+    try {
+        const result = await Quotes.findOne({where:{id: req.params.id}});
+        res.status(200).json({
+            response: 'OK',
+            status: 200,
+            data: result
+        })
+    } catch (err) {
+        console.log(err)
+        res.json({errors:err})
+    }
+}
 
 export const createQuote = async (req, res) => {
   const { quote, user } = req.body;
