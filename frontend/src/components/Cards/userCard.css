@@ -1,64 +1,198 @@
-.much-Quotes {
-  justify-content: space-around;
-  font-family: "EB Garamond";
-  background-color: transparent;
-  box-sizing: border-box;
-  margin: 0;
-  border: none;
-  border-radius: 0;
-  border-bottom: 0.5px solid rgb(153, 153, 153, 0.5);
+.containerLandingPage {
+  width: 80%;
+  height: 100%;
+  margin-left: 170px;
 }
-.img-empty {
-  display: flex;
+.judulLandingPage {
   width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+.judulLandingPage > h2 {
+  font-weight: 200;
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: 0.02em;
+  color: #212121;
+}
+.quotesLandingPage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  column-gap: 80px;
+  row-gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.Quotes {
+  width: 360px;
+  height: 240px;
+  background: #eeeeee;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.navigateMenu {
+  width: 100%;
+  position: relative;
+  flex-basis: 15%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+}
+.menuQuotes {
+  width: 34px;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+}
+.menuQuotes:hover {
+  cursor: pointer;
+}
+.menuQuotes > span {
+  width: 8px;
+  height: 8px;
+  border-radius: 30px;
+  background-color: #32373d;
+  opacity: 0.8;
+}
+.textQuotes {
+  width: 100%;
+  flex-basis: 73%;
+  padding: 10px;
+  text-align: center;
+  display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
-.img-empty > img {
-  width: 96px;
-  height: 96px;
+.textQuotes > q {
+  font-weight: 400;
+  font-size: 1em;
+  letter-spacing: 0.02em;
+  color: #000000;
 }
-blockquote {
+.authorQuotes {
+  width: 100%;
+  flex-basis: 12%;
+  display: flex;
+  justify-content: flex-end;
+}
+.authorQuotes > p {
+  letter-spacing: 0.02em;
+  padding-right: 10px;
+  color: #212121;
   margin: 0;
-  padding: 0;
-  position: relative;
+  opacity: 0.8;
+}
+.helloLandingPage {
+  width: 100%;
+}
+.helloLandingPage > h2 {
+  font-size: 1.4em;
+  padding-left: 10px;
 
-  max-width: 820px;
-  line-height: 1.4;
-  text-rendering: optimizeLegibility;
-  font-smoothing: antialiased;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-fon-smoothing: grayscale;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  line-height: 34px;
+}
+.copyrightLandingPage {
+  position: fixed;
+  left: -115px;
+  bottom: 180px;
+}
+.copyrightLandingPage > p {
+  font-size: 0.89em;
+
+  color: #212121;
+  opacity: 0.6;
+  letter-spacing: 0.02em;
+  transform: rotate(-90deg);
+}
+.addMenuQuotes {
+  position: absolute;
+  width: 110px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #eeeeee;
+  box-shadow: 0px 15px 20px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  left: auto;
+  row-gap: 5px;
+  right: -10px;
+  top: 30px;
+  padding: 10px;
+  transform: scale(0);
+  transition: all 0.2s;
+}
+.active {
+  transform: scale(1);
+}
+.editQuotes,
+.deleteQuotes,
+.viewQuotes {
+  width: 100%;
+  flex-basis: 15%;
+  display: flex;
+  justify-content: space-between;
+}
+.editQuotes:hover,
+.deleteQuotes:hover,
+.viewQuotes:hover {
+  cursor: pointer;
+}
+.texteditQuotes > p,
+.textdeleteQuotes > p,
+.textviewQuotes > p {
+  letter-spacing: 0.02em;
+  color: #212121;
+  opacity: 0.8;
+  margin: 0;
+}
+.imageEditQuotes > img,
+.imageDeleteQuotes > img,
+.imageViewQuotes > img {
+  opacity: 0.6;
 }
 
-blockquote p:first-of-type:before {
-  content: "\201c";
-  position: absolute;
-  left: -0.5em;
+@media screen and (max-width: 690px) {
+  .containerLandingPage {
+    margin-left: 135px;
+  }
 }
+@media screen and (max-width: 620px) {
+  .containerLandingPage {
+    margin: 0;
+    width: 100%;
+    margin-bottom: 85px;
+  }
+  .judulLandingPage {
+    height: 80px;
+  }
+  .judulLandingPage > h2 {
+    font-size: 1.55em;
+  }
+}
+@media screen and (max-width: 500px) {
+  .Quotes {
+    width: 330px;
+    height: 230px;
+  }
 
-blockquote p:last-of-type:after {
-  content: "\201d";
-  position: absolute;
+  .helloLandingPage {
+    width: 100%;
+    margin-bottom: 15px;
+  }
 }
-.delete {
-  position: absolute;
-  z-index: 99;
-  top: 0;
-  right: 16px;
-  background-color: transparent;
-  border: none;
-}
-
-.show {
-  width: 15px;
-  height: 15px;
-  position: absolute;
-  bottom: 10px;
-  right: 16px;
-}
-.showButton {
-  background-color: transparent;
-  border: none;
+@media screen and (max-width: 380px) {
+  .Quotes {
+    width: 315px;
+    height: 220px;
+  }
 }

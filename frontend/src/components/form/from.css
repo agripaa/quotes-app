@@ -1,34 +1,407 @@
-.inputName {
-  border: none;
-  border-left: 1px solid rgba(114, 114, 114, 0.7);
-  border-bottom-left-radius: 5px 5px;
-  border-top-left-radius: 0;
-  border-bottom: 1px solid rgba(114, 114, 114, 0.7);
-  background-color: transparent;
+.containerForm {
+  width: 80%;
+  height: 100%;
+  margin-left: 170px;
 }
-.cards {
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
-  border-bottom-left-radius: 5px 5px;
-  border-top-left-radius: 0;
-  border-left: 1px solid rgba(60, 110, 122, 0.7);
-  border-bottom: 1px solid rgba(60, 110, 122, 0.7);
+.judulForm {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
 }
-.inputName:focus {
-  background-color: transparent;
+.judulForm > h2 {
+  font-weight: 200;
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: 0.02em;
+  color: #212121;
+}
+.inputForm {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  margin-top: 4.5%;
+}
+.textAreaForm {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+#area {
+  resize: none;
+  width: 800px;
+  height: 400px;
+  background: #eeeeee;
+  border-radius: 10px;
   outline: none;
-  box-shadow: none;
+  border: none;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 20px;
+  padding-top: 8%;
 }
-body::-webkit-scrollbar {
-  width: 1px;
+.textAreaForm > h2 {
+  position: absolute;
+  top: 40%;
+  font-size: 1.8em;
+  opacity: 0.2;
+}
+.buttonForm {
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+}
+.textInputForm {
+  width: 361px;
+  height: 60px;
+  border: none;
+  outline: none;
+  background: #eeeeee;
+  border-radius: 10px;
+  padding: 10px;
+  padding-left: 14px;
+  font-size: 1.2em;
+}
+.buttonsubmit {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 6px;
+  width: 163px;
+  height: 60px;
+  border: none;
+  background: #7c69ff;
+  border-radius: 10px;
+  align-items: center;
+}
+.uploadForm > p {
+  font-size: 24px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  opacity: 0.8;
+  margin: 0;
+}
+.animeImageForm {
+  position: absolute;
+  top: 0;
+  right: -25.5%;
+}
+.animeImageForm > img {
+  height: 800px;
+  opacity: 0.6;
+}
+@media screen and (max-width: 1400px) {
+  .containerForm {
+    margin-left: 150px;
+  }
+  .animeImageForm {
+    right: -30%;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .containerForm {
+    margin-left: 90px;
+  }
+  .animeImageForm {
+    right: -32%;
+  }
+}
+@media screen and (max-width: 1230px) {
+  .animeImageForm {
+    right: -35%;
+  }
+}
+@media screen and (max-width: 1175px) {
+  .animeImageForm {
+    right: -37%;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .containerForm {
+    margin-left: 60px;
+  }
+  #area {
+    width: 620px;
+    height: 380px;
+  }
+  .buttonForm {
+    width: 620px;
+  }
+  .animeImageForm {
+    transform: scale(0);
+  }
+}
+@media screen and (max-width: 1050px) {
+  #area {
+    width: 560px;
+    height: 360px;
+  }
+  .buttonForm {
+    width: 560px;
+  }
+  .textInputForm {
+    width: 331px;
+    height: 60px;
+  }
+  .buttonsubmit {
+    width: 150px;
+    height: 60px;
+  }
+}
+@media screen and (max-width: 920px) {
+  #area {
+    width: 480px;
+    height: 300px;
+  }
+  .buttonForm {
+    width: 480px;
+  }
+  .textInputForm {
+    width: 315px;
+    height: 55px;
+  }
+  .buttonsubmit {
+    width: 126px;
+    height: 55px;
+  }
+  .imageForm > img {
+    width: 20px;
+    height: 20px;
+  }
+  .uploadForm > p {
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    opacity: 0.8;
+    margin: 0;
+  }
 }
 
-body::-webkit-scrollbar-track {
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+@media screen and (max-width: 850px) {
+  #area {
+    width: 450px;
+    height: 280px;
+  }
+  .buttonForm {
+    width: 450px;
+  }
+  .textInputForm {
+    width: 305px;
+    height: 55px;
+  }
+  .buttonsubmit {
+    width: 126px;
+    height: 55px;
+  }
 }
-
-body::-webkit-scrollbar-thumb {
-  background-color: rgba(109, 193, 214, 0.7);
-  outline: 1px solid rgb(95, 151, 207);
+@media screen and (max-width: 810px) {
+  #area {
+    width: 420px;
+    height: 280px;
+  }
+  .buttonForm {
+    width: 420px;
+  }
+  .textInputForm {
+    width: 295px;
+    height: 50px;
+  }
+  .buttonsubmit {
+    width: 126px;
+    height: 50px;
+  }
+}
+@media screen and (max-width: 750px) {
+  #area {
+    width: 390px;
+    height: 270px;
+  }
+  .buttonForm {
+    width: 390px;
+  }
+  .textInputForm {
+    width: 240px;
+    height: 45px;
+  }
+  .buttonsubmit {
+    width: 106px;
+    height: 45px;
+  }
+  .imageForm > img {
+    width: 18px;
+    height: 18px;
+  }
+  .uploadForm > p {
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    opacity: 0.8;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 690px) {
+  #area {
+    width: 360px;
+    height: 270px;
+  }
+  .buttonForm {
+    width: 360px;
+  }
+  .textInputForm {
+    width: 235px;
+    height: 45px;
+  }
+  .buttonsubmit {
+    width: 106px;
+    height: 45px;
+  }
+}
+@media screen and (max-width: 660px) {
+  #area {
+    width: 320px;
+    height: 240px;
+  }
+  .buttonForm {
+    width: 320px;
+  }
+  .textInputForm {
+    width: 205px;
+    height: 40px;
+  }
+  .buttonsubmit {
+    width: 100px;
+    height: 40px;
+  }
+  .imageForm > img {
+    width: 16px;
+    height: 16px;
+  }
+  .uploadForm > p {
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    opacity: 0.8;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 620px) {
+  .containerForm {
+    margin: 0;
+    width: 100%;
+    margin-bottom: 85px;
+  }
+  .judulForm {
+    height: 80px;
+  }
+  .judulForm > h2 {
+    font-size: 1.55em;
+  }
+  #area {
+    width: 320px;
+    height: 240px;
+  }
+  .buttonForm {
+    width: 320px;
+  }
+  .textInputForm {
+    width: 205px;
+    height: 40px;
+  }
+  .buttonsubmit {
+    width: 100px;
+    height: 40px;
+  }
+  .animeImageForm2 {
+    position: absolute;
+    bottom: 3%;
+    left: -4.4%;
+  }
+  .animeImageForm2 > img {
+    width: 500px;
+    height: 300px;
+    opacity: 0.6;
+  }
+}
+@media screen and (max-width: 550px) {
+  #area {
+    width: 450px;
+    height: 305px;
+  }
+  .buttonForm {
+    width: 450px;
+  }
+  .textInputForm {
+    width: 225px;
+    height: 37px;
+  }
+  .buttonsubmit {
+    width: 125px;
+    height: 40px;
+  }
+}
+@media screen and (max-width: 500px) {
+  #area {
+    width: 430px;
+    height: 305px;
+  }
+  .buttonForm {
+    width: 430px;
+  }
+  .textInputForm {
+    width: 225px;
+    height: 37px;
+  }
+  .buttonsubmit {
+    width: 125px;
+    height: 40px;
+  }
+}
+@media screen and (max-width: 490px) {
+  #area {
+    width: 390px;
+    height: 280px;
+  }
+  .buttonForm {
+    width: 390px;
+  }
+  .textInputForm {
+    width: 205px;
+    height: 35px;
+  }
+  .buttonsubmit {
+    width: 115px;
+    height: 37px;
+  }
+  .imageForm > img {
+    width: 15px;
+    height: 15px;
+  }
+  .uploadForm > p {
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    opacity: 0.8;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 400px) {
+  #area {
+    width: 310px;
+    height: 210px;
+  }
+  .buttonForm {
+    width: 310px;
+  }
+  .textInputForm {
+    width: 190px;
+    height: 35px;
+  }
+  .buttonsubmit {
+    width: 105px;
+    height: 37px;
+  }
 }

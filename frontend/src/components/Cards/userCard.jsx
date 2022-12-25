@@ -1,19 +1,18 @@
-import Card from "react-bootstrap/Card";
 import "./userCard.css";
 import React, { Fragment } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import Edit from "./img/edit.png";
+import Dlt from "./img/delete.png";
+import view from "./img/view.png";
 import axios from "axios";
-import closeLogo from "./img/closee.svg";
-import showLogo from "./img/show.png";
-import empty from "./img/empty2.png";
-import Col from "react-bootstrap/esm/Col";
 import { Link } from "react-router-dom";
 import Loaders from "../loaders/loader";
-function WithHeaderAndQuoteExample() {
+function HomePage() {
   const [data, setdata] = useState([]);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
+  const [show, setShow] = useState(true);
   const [width, setWidth] = useState(window.innerWidth);
 
   async function getApi() {
@@ -36,7 +35,27 @@ function WithHeaderAndQuoteExample() {
       console.error(e);
     }
   }
+  async function getShow() {
+    return setShow(!show);
+  }
 
+  async function addMenu(e) {
+    let menu = await e.currentTarget.parentElement.parentElement;
+    await getShow();
+    if (show) {
+      if (menu.children[3].className !== "addMenuQuotes active") {
+        menu.children[3].className = "addMenuQuotes active";
+      } else {
+        menu.children[3].className = "addMenuQuotes";
+      }
+    } else {
+      if (menu.children[3].className === "addMenuQuotes active") {
+        menu.children[3].className = "addMenuQuotes";
+      } else {
+        menu.children[3].className = "addMenuQuotes active";
+      }
+    }
+  }
   useEffect(() => {
     getApi();
   }, []);
@@ -46,93 +65,128 @@ function WithHeaderAndQuoteExample() {
   useEffect(() => {
     window.addEventListener("resize", handleWidth);
   }, [width]);
-  if (notFound) {
-    return (
-      <div className="img-empty">
-        <img src={empty} alt="kosong" />
-        <p>lost Connection</p>
-      </div>
-    );
-  }
+
   return (
     <Fragment>
-      {loading ? (
-        <>
-          <Loaders />
-        </>
-      ) : (
-        <>
-          {data.length > 0 ? (
-            <>
-              {width <= 700 ? (
-                <>
-                  {data.map((post) => {
-                    return (
-                      <Col md="auto" key={post.id}>
-                        <Card className="mt-3 much-Quotes">
-                          <Card.Body>
-                            <button
-                              type="button"
-                              className="delete"
-                              onClick={() => deleteQuote(post.id)}
-                            >
-                              <img src={closeLogo} alt="" width={15} />
-                            </button>
-                            <blockquote>
-                              <p key={post.id}>{post.quote}</p>
-                              <footer>{post.user}</footer>
-                            </blockquote>
-                            <Link to={`show/${post.id}`}>
-                              <>
-                                <img src={showLogo} alt="" className="show" />
-                              </>
-                            </Link>
-                          </Card.Body>
-                        </Card>
-                      </Col>
-                    );
-                  })}
-                </>
-              ) : (
-                <>
-                  {data.map((post) => {
-                    return (
-                      <Col className="col-6 col-md-4" key={post.id}>
-                        <Card className="mt-3 much-Quotes">
-                          <Card.Body>
-                            <button
-                              type="button"
-                              className="delete"
-                              onClick={() => deleteQuote(post.id)}
-                            >
-                              <img src={closeLogo} alt="" width={15} />
-                            </button>
-                            <blockquote>
-                              <p>{post.quote}</p>
-                              <footer>{post.user}</footer>
-                            </blockquote>
-                            <Link to={`show/${post.id}`}>
-                              <>
-                                <img src={showLogo} alt="" className="show" />
-                              </>
-                            </Link>
-                          </Card.Body>
-                        </Card>
-                      </Col>
-                    );
-                  })}
-                </>
-              )}
-            </>
-          ) : (
-            <div className="img-empty">
-              <img src={empty} alt="kosong" />
-              <p>tidak ada data</p>
+      <div className="containerLandingPage">
+        <div className="judulLandingPage">
+          <h2>Quote - Thinking About You</h2>
+        </div>
+        {width > 620 ? (
+          <>
+            <div className="quotesLandingPage">
+              {data.map((res) => {
+                return (
+                  <div className="Quotes" key={res.id}>
+                    <div className="navigateMenu">
+                      <div className="menuQuotes" onClick={addMenu.bind(this)}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                    </div>
+                    <div className="textQuotes">
+                      <q>{res.quote}</q>
+                    </div>
+                    <div className="authorQuotes">
+                      <p>{res.user}</p>
+                    </div>
+                    <div className={`addMenuQuotes`}>
+                      <div className="editQuotes">
+                        <div className="texteditQuotes">
+                          <p>Edit</p>
+                        </div>
+                        <div className="imageEditQuotes">
+                          <img src={Edit} alt="" />
+                        </div>
+                      </div>
+                      <div
+                        className="deleteQuotes"
+                        onClick={deleteQuote.bind(this, res.id)}
+                      >
+                        <div className="textdeleteQuotes">
+                          <p>Delete</p>
+                        </div>
+                        <div className="imageDeleteQuotes">
+                          <img src={Dlt} alt="" />
+                        </div>
+                      </div>
+                      <div className="viewQuotes">
+                        <div className="textviewQuotes">
+                          <p>View</p>
+                        </div>
+                        <div className="imageViewQuotes">
+                          <img src={view} alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-          )}
-        </>
-      )}
+          </>
+        ) : (
+          <>
+            <div className="helloLandingPage">
+              <h2>Hello!</h2>
+            </div>
+            <div className="copyrightLandingPage">
+              <p>Created by : Agripa Syahroni Ase.Runa</p>
+            </div>
+            <div className="quotesLandingPage">
+              {data.map((res) => {
+                return (
+                  <div className="Quotes" key={res.id}>
+                    <div className="navigateMenu">
+                      <div className="menuQuotes" onClick={addMenu.bind(this)}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                    </div>
+                    <div className="textQuotes">
+                      <q>{res.quote}</q>
+                    </div>
+                    <div className="authorQuotes">
+                      <p>{res.user}</p>
+                    </div>
+                    <div className={`addMenuQuotes`}>
+                      <div className="editQuotes">
+                        <div className="texteditQuotes">
+                          <p>Edit</p>
+                        </div>
+                        <div className="imageEditQuotes">
+                          <img src={Edit} alt="" />
+                        </div>
+                      </div>
+                      <div
+                        className="deleteQuotes"
+                        onClick={() => deleteQuote(res.id)}
+                      >
+                        <div className="textdeleteQuotes">
+                          <p>Delete</p>
+                        </div>
+                        <div className="imageDeleteQuotes">
+                          <img src={Dlt} alt="" />
+                        </div>
+                      </div>
+                      <div className="viewQuotes">
+                        <div className="textviewQuotes">
+                          <p>View</p>
+                        </div>
+                        <div className="imageViewQuotes">
+                          <img src={view} alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </>
+        )}
+      </div>
     </Fragment>
   );
 }
-export default WithHeaderAndQuoteExample;
+export default HomePage;
