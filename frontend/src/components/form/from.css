@@ -78,6 +78,18 @@
   border-radius: 10px;
   align-items: center;
 }
+.buttonsubmitCancel {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 6px;
+  width: 163px;
+  height: 60px;
+  border: none;
+  margin-top: 10px;
+  background: #c90000;
+  border-radius: 10px;
+  align-items: center;
+}
 .uploadForm > p {
   font-size: 24px;
   letter-spacing: 0.02em;
@@ -147,7 +159,8 @@
     width: 331px;
     height: 60px;
   }
-  .buttonsubmit {
+  .buttonsubmit,
+  .buttonsubmitCancel {
     width: 150px;
     height: 60px;
   }
@@ -164,7 +177,8 @@
     width: 315px;
     height: 55px;
   }
-  .buttonsubmit {
+  .buttonsubmit,
+  .buttonsubmitCancel {
     width: 126px;
     height: 55px;
   }
@@ -193,7 +207,8 @@
     width: 305px;
     height: 55px;
   }
-  .buttonsubmit {
+  .buttonsubmit,
+  .buttonsubmitCancel {
     width: 126px;
     height: 55px;
   }
@@ -210,7 +225,8 @@
     width: 295px;
     height: 50px;
   }
-  .buttonsubmit {
+  .buttonsubmit,
+  .buttonsubmitCancel {
     width: 126px;
     height: 50px;
   }
@@ -227,7 +243,8 @@
     width: 240px;
     height: 45px;
   }
-  .buttonsubmit {
+  .buttonsubmit,
+  .buttonsubmitCancel {
     width: 106px;
     height: 45px;
   }
@@ -255,7 +272,8 @@
     width: 235px;
     height: 45px;
   }
-  .buttonsubmit {
+  .buttonsubmit,
+  .buttonsubmitCancel {
     width: 106px;
     height: 45px;
   }
@@ -272,7 +290,8 @@
     width: 205px;
     height: 40px;
   }
-  .buttonsubmit {
+  .buttonsubmit,
+  .buttonsubmitCancel {
     width: 100px;
     height: 40px;
   }
@@ -311,7 +330,8 @@
     width: 205px;
     height: 40px;
   }
-  .buttonsubmit {
+  .buttonsubmit,
+  .buttonsubmitCancel {
     width: 100px;
     height: 40px;
   }
@@ -338,7 +358,8 @@
     width: 225px;
     height: 37px;
   }
-  .buttonsubmit {
+  .buttonsubmit,
+  .buttonsubmitCancel {
     width: 125px;
     height: 40px;
   }
@@ -355,7 +376,8 @@
     width: 225px;
     height: 37px;
   }
-  .buttonsubmit {
+  .buttonsubmit,
+  .buttonsubmitCancel {
     width: 125px;
     height: 40px;
   }
@@ -372,7 +394,8 @@
     width: 205px;
     height: 35px;
   }
-  .buttonsubmit {
+  .buttonsubmit,
+  .buttonsubmitCancel {
     width: 115px;
     height: 37px;
   }
@@ -400,7 +423,8 @@
     width: 190px;
     height: 35px;
   }
-  .buttonsubmit {
+  .buttonsubmit,
+  .buttonsubmitCancel {
     width: 105px;
     height: 37px;
   }

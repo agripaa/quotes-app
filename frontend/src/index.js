@@ -12,6 +12,7 @@ root.render(
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/create" element={<FormAndQuotes />} />
+      <Route path="/update/:id" element={<FormAndQuotes />} />
       <Route path="show/:id" element={<ShowQuotes />} />
     </Routes>
   </BrowserRouter>

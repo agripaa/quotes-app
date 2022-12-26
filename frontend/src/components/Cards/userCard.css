@@ -2,6 +2,7 @@
   width: 80%;
   height: 100%;
   margin-left: 170px;
+  margin-bottom: 20px;
 }
 .judulLandingPage {
   width: 100%;
@@ -160,7 +161,12 @@
 .imageViewQuotes > img {
   opacity: 0.6;
 }
-
+.dataKosong,
+.img-empty {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 @media screen and (max-width: 690px) {
   .containerLandingPage {
     margin-left: 135px;
