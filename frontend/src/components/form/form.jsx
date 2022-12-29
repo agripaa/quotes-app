@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import { Fragment } from "react";
 import upload from "./img/upload.png";
 import anime1 from "./img/anime.png";
-import anime2 from "./img/animeNulis.png";
 import close from "./img/closetab2.png";
 import axios from "axios";
 import Navbar from "../navbar/navbar";
@@ -169,16 +168,10 @@ function FormAndQuotes() {
             </div>
           </div>
         </form>
-        {width > 620 ? (
+        {width > 620 && (
           <>
             <div className="animeImageForm">
               <img src={anime1} alt="" />
-            </div>
-          </>
-        ) : (
-          <>
-            <div className="animeImageForm2">
-              <img src={anime2} alt="" />
             </div>
           </>
         )}

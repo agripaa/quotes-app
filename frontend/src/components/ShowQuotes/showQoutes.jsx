@@ -7,7 +7,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Loaders from "../loaders/loader";
 import Navbar from "../navbar/navbar";
 import animeShowQuotes from "./img/anime2.png";
-import animeShowQuotes2 from "./img/animeNulis.png";
 function ShowQuotes() {
   const [myQoutes, setMyqoutes] = useState({});
   const [loading, setLoading] = useState(true);
@@ -82,16 +81,10 @@ function ShowQuotes() {
           </>
         )}
 
-        {width > 620 ? (
+        {width > 620 && (
           <>
             <div className="animeImageShowQuotes">
               <img src={animeShowQuotes} alt="" />
-            </div>
-          </>
-        ) : (
-          <>
-            <div className="animeImageShowQuotes2">
-              <img src={animeShowQuotes2} alt="" />
             </div>
           </>
         )}
