@@ -61,6 +61,11 @@
   background-color: #32373d;
   opacity: 0.8;
 }
+.addMenuQuotes > a {
+  text-decoration: none;
+  color: transparent;
+  width: 100%;
+}
 .textQuotes {
   width: 100%;
   flex-basis: 73%;

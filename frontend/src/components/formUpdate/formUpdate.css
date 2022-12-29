@@ -113,6 +113,7 @@
   }
   .animeImageForm {
     transform: scale(0);
+    right: -30%;
   }
 }
 @media screen and (max-width: 1300px) {

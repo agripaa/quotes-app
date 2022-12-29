@@ -6,7 +6,7 @@ import Edit from "./img/edit.png";
 import Dlt from "./img/delete.png";
 import view from "./img/view.png";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Loaders from "../loaders/loader";
 function HomePage() {
   const [data, setdata] = useState([]);
@@ -113,19 +113,17 @@ function HomePage() {
                                   <p>{res.user}</p>
                                 </div>
                                 <div className={`addMenuQuotes`}>
-                                  <div
-                                    className="editQuotes"
-                                    onClick={() => {
-                                      navigate(`/update/${res.id}`);
-                                    }}
-                                  >
-                                    <div className="texteditQuotes">
-                                      <p>Edit</p>
+                                  <Link to={`/update/${res.id}`}>
+                                    <div className="editQuotes">
+                                      <div className="texteditQuotes">
+                                        <p>Edit</p>
+                                      </div>
+                                      <div className="imageEditQuotes">
+                                        <img src={Edit} alt="" />
+                                      </div>
                                     </div>
-                                    <div className="imageEditQuotes">
-                                      <img src={Edit} alt="" />
-                                    </div>
-                                  </div>
+                                  </Link>
+
                                   <div
                                     className="deleteQuotes"
                                     onClick={deleteQuote.bind(this, res.id)}
@@ -137,19 +135,16 @@ function HomePage() {
                                       <img src={Dlt} alt="" />
                                     </div>
                                   </div>
-                                  <div
-                                    className="viewQuotes"
-                                    onClick={() => {
-                                      navigate(`/show/${res.id}`);
-                                    }}
-                                  >
-                                    <div className="textviewQuotes">
-                                      <p>View</p>
+                                  <Link to={`/show/${res.id}`}>
+                                    <div className="viewQuotes">
+                                      <div className="textviewQuotes">
+                                        <p>View</p>
+                                      </div>
+                                      <div className="imageViewQuotes">
+                                        <img src={view} alt="" />
+                                      </div>
                                     </div>
-                                    <div className="imageViewQuotes">
-                                      <img src={view} alt="" />
-                                    </div>
-                                  </div>
+                                  </Link>
                                 </div>
                               </div>
                             );
