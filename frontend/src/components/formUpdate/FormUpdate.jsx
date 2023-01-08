@@ -1,27 +1,40 @@
 import React from "react";
-import "./from.css";
+import "./formUpdate.css";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Fragment } from "react";
 import upload from "./img/upload.png";
 import anime1 from "./img/anime.png";
+import close from "./img/closetab2.png";
 import axios from "axios";
 import Navbar from "../navbar/navbar";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-function FormAndQuotes() {
+function FormUpdates() {
   const [user, setUser] = useState({});
   const [nama, setNama] = useState("");
   const [text, setText] = useState("");
   const [typed, setTyped] = useState("");
+
+  const params = useParams();
   const navigate = useNavigate();
+
+  // mengambil data quotes id yang mau di update
+  async function getParamsId() {
+    try {
+      let res = await axios.get(`http://localhost:5000/quote/${params.id}`);
+      setNama(res.data.data.user);
+      setText(res.data.data.quote);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   // menambahkan quotes
   async function addQuotes(e) {
     e.preventDefault();
-    let date = new Date().getTime();
     let newData = {
-      id: date,
+      id: params.id,
       quote: text,
       user: nama,
     };
@@ -30,20 +43,29 @@ function FormAndQuotes() {
     setText("");
   }
 
-  // add quotes new
-  async function getPostUser() {
-    let res = await axios.post("http://localhost:5000/quote", user);
-    navigate("/");
-    return res;
+  // add axios put
+
+  async function getPostUserNew() {
+    try {
+      await axios.patch(`http://localhost:5000/quote/${params.id}`, user);
+      navigate("/");
+    } catch (error) {
+      console.log(error.msg);
+    }
   }
- 
+
+  async function CancelUpdate() {
+    setNama("");
+    setText("");
+    navigate("/");
+  }
 
   useEffect(() => {
+    getParamsId();
     if (user.user && user.quote) {
-      getPostUser();
+      getPostUserNew();
     }
   }, [user]);
-  // kontrol ukuran width
 
   return (
     <Fragment>
@@ -89,7 +111,15 @@ function FormAndQuotes() {
                   <img src={upload} alt="" />
                 </div>
                 <div className="uploadForm">
-                  <p>Upload</p>{" "}
+                  <p>Simpan</p>{" "}
+                </div>
+              </button>
+              <button className="buttonsubmitCancel" onClick={CancelUpdate}>
+                <div className="imageForm">
+                  <img src={close} alt="" />
+                </div>
+                <div className="uploadForm">
+                  <p>Cancel</p>{" "}
                 </div>
               </button>
             </div>
@@ -103,4 +133,4 @@ function FormAndQuotes() {
   );
 }
 
-export default FormAndQuotes;
+export default FormUpdates;

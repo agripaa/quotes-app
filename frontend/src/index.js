@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App";
 import ShowQuotes from "./components/ShowQuotes/showQoutes";
 import FormAndQuotes from "./components/form/form";
+import FormUpdates from "./components/formUpdate/FormUpdate";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -12,6 +13,7 @@ root.render(
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/create" element={<FormAndQuotes />} />
+      <Route path="/update/:id" element={<FormUpdates />} />
       <Route path="show/:id" element={<ShowQuotes />} />
     </Routes>
   </BrowserRouter>

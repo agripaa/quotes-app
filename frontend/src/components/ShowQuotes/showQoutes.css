@@ -1,72 +1,317 @@
-* {
-  padding: 0;
-  margin: 0;
-}
-html,
-body {
-  background-color: #52acff;
-
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-.blockquote-wrapper {
-  display: flex;
-  height: 100vh;
-  padding: 0 20px;
-}
-
-/* Blockquote main style */
-.blockquote {
+.containerShowQuotes {
+  width: 80%;
+  height: 100%;
+  margin-left: 170px;
   position: relative;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 800;
-  color: #ffffff;
-  padding: 30px 0;
+}
+
+.judulShowQuotes {
   width: 100%;
-  max-width: 800px;
-  z-index: 1;
-  margin: 80px auto;
-  align-self: center;
-  border-top: solid 1px;
-  border-bottom: solid 1px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
 }
-
-/* Blockquote header */
-.blockquote h1 {
-  position: relative;
-  color: #ffffff;
-  font-size: 40px;
-  font-weight: 800;
-  line-height: 1;
-  margin: 0;
+.judulShowQuotes > h2 {
+  font-weight: 200;
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: 0.02em;
+  color: #212121;
 }
-
-/* Blockquote right double quotes */
-.blockquote:after {
+.previousShowQuotes {
   position: absolute;
-  content: "”";
-  color: rgba(255, 255, 255, 1);
-  font-size: 10rem;
-  line-height: 0;
-  bottom: -43px;
-  right: 30px;
+  top: 10%;
+  width: 55px;
+  height: 55px;
+  border-radius: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.previousShowQuotes:hover {
+  cursor: pointer;
+}
+.previousShowQuotes > img {
+  opacity: 0.4;
+  width: 50px;
+  height: 50px;
 }
 
-/* increase header size after 600px */
-@media all and (min-width: 600px) {
-  .blockquote h1 {
-    font-size: 60px;
+.tabelShowQuotes {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 4.5%;
+}
+.showQuotes {
+  width: 800px;
+  height: 400px;
+  background: #eeeeee;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0px 0px 3px rgb(196, 196, 196);
+}
+.textShowQuotes {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.textShowQuotes > q {
+  font-size: 1.8em;
+  letter-spacing: 0.02em;
+}
+.authorShowQuotes {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-right: 10px;
+}
+.authorShowQuotes > p {
+  font-size: 1.1em;
+}
+.animeImageShowQuotes {
+  position: absolute;
+  top: 0;
+  right: -43%;
+}
+.animeImageShowQuotes > img {
+  height: 800px;
+  opacity: 0.6;
+}
+.dataKosong {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 1400px) {
+  .containerShowQuotes {
+    margin-left: 150px;
+  }
+  .animeImageShowQuotes {
+    right: -50%;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .containerShowQuotes {
+    margin-left: 90px;
+  }
+  .animeImageShowQuotes {
+    right: -57%;
+  }
+  .previousShowQuotes {
+    top: auto;
+    left: 30px;
+    bottom: -40%;
+    opacity: 0.4;
+  }
+}
+@media screen and (max-width: 1230px) {
+  .animeImageShowQuotes {
+    right: -60%;
+  }
+}
+@media screen and (max-width: 1175px) {
+  .animeImageShowQuotes {
+    right: -65%;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .containerShowQuotes {
+    margin-left: 130px;
+  }
+  .showQuotes {
+    width: 620px;
+    height: 380px;
+  }
+  .animeImageShowQuotes {
+    transform: scale(0);
+  }
+}
+@media screen and (max-width: 1050px) {
+  .showQuotes {
+    width: 560px;
+    height: 360px;
+  }
+}
+@media screen and (max-width: 920px) {
+  .showQuotes {
+    width: 480px;
+    height: 300px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .showQuotes {
+    width: 450px;
+    height: 280px;
+  }
+}
+@media screen and (max-width: 810px) {
+  .showQuotes {
+    width: 450px;
+    height: 280px;
+  }
+  .textShowQuotes > q {
+    font-size: 1.25em;
+  }
+  .authorShowQuotes > p {
+    font-size: 1.01em;
+  }
+}
+@media screen and (max-width: 750px) {
+  .showQuotes {
+    width: 420px;
+    height: 270px;
+  }
+}
+@media screen and (max-width: 690px) {
+  .showQuotes {
+    width: 400px;
+    height: 270px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .showQuotes {
+    width: 380px;
+    height: 240px;
   }
 }
 
-/* Blockquote subheader */
-.blockquote h4 {
-  position: relative;
-  color: #292a2b;
-  font-size: 1.4rem;
-  font-weight: normal;
-  line-height: 1;
-  margin: 0;
-  padding-top: 20px;
-  z-index: 1;
+@media screen and (max-width: 620px) {
+  .containerShowQuotes {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .judulShowQuotes {
+    height: 100px;
+  }
+  .judulShowQuotes > h2 {
+    font-size: 1.55em;
+  }
+  .showQuotes {
+    width: 360px;
+    height: 240px;
+  }
+  .textShowQuotes > q {
+    font-size: 1.11em;
+  }
+  .previousShowQuotes {
+    top: 20px;
+    left: 0;
+    opacity: 0.4;
+    bottom: auto;
+  }
+  .animeImageShowQuotes2 {
+    position: absolute;
+    bottom: -100%;
+    left: -4.4%;
+  }
+  .animeImageShowQuotes2 > img {
+    width: 500px;
+    height: 300px;
+    opacity: 0.6;
+  }
 }
+@media screen and (max-width: 400px) {
+  .judulShowQuotes > h2 {
+    font-size: 1.35em;
+  }
+  .showQuotes {
+    width: 330px;
+    height: 230px;
+  }
+  .textShowQuotes > q {
+    font-size: 0.97em;
+  }
+  .previousShowQuotes {
+    top: 25px;
+    left: 0;
+    opacity: 0.4;
+    bottom: auto;
+  }
+  .previousShowQuotes > img {
+    width: 40px;
+    height: 40px;
+  }
+  .animeImageShowQuotes2 {
+    position: absolute;
+    bottom: -509px;
+    left: -4.4%;
+  }
+  .animeImageShowQuotes2 > img {
+    width: 500px;
+    height: 300px;
+    opacity: 0.6;
+  }
+}
+@media screen and (max-width: 400px) and (min-height: 700px) {
+  .animeImageShowQuotes2 {
+    position: absolute;
+    bottom: -619px;
+    left: -4.4%;
+  }
+}
+@media screen and (max-width: 600px) and (max-height: 700px) {
+  .animeImageShowQuotes2 {
+    position: absolute;
+    bottom: -669px;
+    left: -4.4%;
+  }
+}
+@media screen and (min-height: 800px) {
+  .animeImageShowQuotes2 {
+    position: absolute;
+    bottom: -573px;
+    left: -4.4%;
+  }
+}
+@media screen and (min-height: 890px) {
+  .animeImageShowQuotes2 {
+    position: absolute;
+    bottom: -520px;
+    left: -4.4%;
+  }
+}
+@media screen and (max-height: 670px) {
+  .animeImageShowQuotes2 {
+    position: absolute;
+    bottom: -300px;
+    left: -4.4%;
+  }
+}
+@media screen and (max-height: 650px) {
+  .animeImageShowQuotes2 {
+    position: absolute;
+    bottom: -283px;
+    left: -4.4%;
+  }
+}
+/* @media screen and (max-height: 965px) {
+  .animeImageShowQuotes2 {
+    position: absolute;
+    bottom: -190%;
+    left: -4.4%;
+  }
+}
+@media screen and (max-height: 900px) {
+  .animeImageShowQuotes2 {
+    position: absolute;
+    bottom: -170%;
+    left: -4.4%;
+  }
+}
+@media screen and (max-height: 870px) {
+  .animeImageShowQuotes2 {
+    position: absolute;
+    bottom: -160%;
+    left: -4.4%;
+  }
+} */

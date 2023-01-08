@@ -8,6 +8,6 @@ body {
   background-color: #f5f5f5 !important;
   background-repeat: no-repeat;
   background-size: contain;
-  height: auto;
+  height: 100%;
   overflow-x: hidden;
 }

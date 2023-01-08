@@ -8,7 +8,7 @@ POST http://localhost:5000/quote
 Content-Type: application/json
 
 {
-    "quote": "kamu jamal aku jimil",
+    "quote": "kamu jamal aku jl",
     "user": "jamal"
 }
 
